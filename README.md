@@ -7,7 +7,7 @@ This jquery plugin is a githubbed fork of http://www.primebox.co.uk/projects/coo
 
 Usage
 -----
-```
+```javascript
 <script type="text/javascript">
 	$(document).ready(function(){
 		$.cookieBar({
@@ -18,7 +18,7 @@ Usage
 ```
 Options
 -------
-```
+```javascript
 message: 'We use cookies to track usage and preferences.', //Message displayed on bar
 acceptButton: true, //Set to true to show accept/enable button
 acceptText: 'I Understand', //Text on accept/enable button
