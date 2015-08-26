@@ -43,7 +43,8 @@
 			zindex: '', //Can be set in CSS, although some may prefer to set here
 			redirect: String(window.location.href), //Current location
 			domain: String(window.location.hostname), //Location of privacy policy
-			referrer: String(document.referrer) //Where visitor has come from
+			referrer: String(document.referrer), //Where visitor has come from
+			acceptFunction: options.acceptFunction || 0, //Function that triggers when user accepts
 		};
 		var options = $.extend(defaults,options);
 		
@@ -137,6 +138,9 @@
 			//Sets the cookie preference to accepted if enable/accept button pressed
 			$('#cookie-bar .cb-enable').click(function(){
 				document.cookie = cookieEntry.replace('{value}','accepted');
+				if (options.acceptFunction && typeof(options.acceptFunction) === 'function') {
+					options.acceptFunction();
+				}
 				if(cookieValue!='enabled' && cookieValue!='accepted'){
 					window.location = options.redirect;
 				}else{
