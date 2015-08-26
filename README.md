@@ -40,6 +40,6 @@ zindex: '', //Can be set in CSS, although some may prefer to set here
 redirect: String(window.location.href), //Current location
 domain: String(window.location.hostname), //Location of privacy policy
 referrer: String(document.referrer) //Where visitor has come from
-acceptFunction: options.acceptFunction || 0, //Callback function that triggers when user accepts
-declineFunction: options.declineFunction || 0, //Callback function that triggers when user declines
+acceptFunction: false, //Callback function that triggers when user accepts
+declineFunction: false, //Callback function that triggers when user declines
 ```
