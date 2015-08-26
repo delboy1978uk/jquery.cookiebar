@@ -44,7 +44,8 @@
 			redirect: String(window.location.href), //Current location
 			domain: String(window.location.hostname), //Location of privacy policy
 			referrer: String(document.referrer), //Where visitor has come from
-			acceptFunction: options.acceptFunction || 0, //Function that triggers when user accepts
+			acceptFunction: options.acceptFunction || 0, //Callback function that triggers when user accepts
+			declineFunction: options.declineFunction || 0, //Callback function that triggers when user declines
 		};
 		var options = $.extend(defaults,options);
 		
@@ -169,6 +170,9 @@
 					}
 				}
 				document.cookie = cookieEntry.replace('{value}','declined');
+				if (options.declineFunction && typeof(options.declineFunction) === 'function') {
+					options.declineFunction();
+				}
 				if(cookieValue=='enabled' && cookieValue!='accepted'){
 					window.location = options.redirect;
 				}else{
