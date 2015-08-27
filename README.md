@@ -46,4 +46,4 @@ Minifying Files
 1. Install [node and npm](http://nodejs.org/) on your machine.
 2. Run "npm install" to install required grunt packages.
 3. Run "grunt minify" to minify js and css.
-4. Remember to add the licenses back into the minified files.
+4. Remember to add the short license back into the top of the minified files.
