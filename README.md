@@ -11,7 +11,8 @@ Usage
 <script type="text/javascript">
 	$(document).ready(function(){
 		$.cookieBar({
-			bottom: true;
+			fixed: true,
+			bottom: true
 		});
 	});
 </script>
