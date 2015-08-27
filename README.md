@@ -41,3 +41,9 @@ redirect: String(window.location.href), //Current location
 domain: String(window.location.hostname), //Location of privacy policy
 referrer: String(document.referrer) //Where visitor has come from
 ```
+Minifying Files
+-------
+1. Install [node and npm](http://nodejs.org/) on your machine.
+2. Run "npm install" to install required grunt packages.
+3. Run "grunt minify" to minify js and css.
+4. Remember to add the licenses back into the minified files.
