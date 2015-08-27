@@ -41,7 +41,7 @@
 			fixed: false, //Set to true to add the class "fixed" to the cookie bar. Default CSS should fix the position
 			bottom: false, //Force CSS when fixed, so bar appears at bottom of website
 			zindex: '', //Can be set in CSS, although some may prefer to set here
-			redirect: String(window.location.href), //Current location
+			redirect: String(window.location.href), //Current location. Setting to false stops redirect
 			domain: String(window.location.hostname), //Location of privacy policy
 			referrer: String(document.referrer), //Where visitor has come from
 			acceptFunction: false, //Callback function that triggers when user accepts
@@ -143,7 +143,9 @@
 					options.acceptFunction();
 				}
 				if(cookieValue!='enabled' && cookieValue!='accepted'){
-					window.location = options.redirect;
+					if (options.redirect !== false) {
+						window.location = options.redirect;
+					}
 				}else{
 					if(options.effect=='slide'){
 						$('#cookie-bar').slideUp(300,function(){$('#cookie-bar').remove();});
@@ -174,7 +176,9 @@
 					options.declineFunction();
 				}
 				if(cookieValue=='enabled' && cookieValue!='accepted'){
-					window.location = options.redirect;
+					if (options.redirect !== false) {
+						window.location = options.redirect;
+					}
 				}else{
 					if(options.effect=='slide'){
 						$('#cookie-bar').slideUp(300,function(){$('#cookie-bar').remove();});
