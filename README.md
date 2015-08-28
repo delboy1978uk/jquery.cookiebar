@@ -50,6 +50,7 @@ Minifying Files
 2. Run "npm install" to install required grunt packages.
 3. Run "grunt minify" to minify js and css.
 4. Remember to add the short license back into the top of the minified files.
+
 Change Log
 -------
 ####v1.1.0####
