@@ -11,7 +11,8 @@ Usage
 <script type="text/javascript">
 	$(document).ready(function(){
 		$.cookieBar({
-			bottom: true;
+			fixed: true,
+			bottom: true
 		});
 	});
 </script>
@@ -37,7 +38,15 @@ append: false, //Set to true for cookieBar HTML to be placed at base of website.
 fixed: false, //Set to true to add the class "fixed" to the cookie bar. Default CSS should fix the position
 bottom: false, //Force CSS when fixed, so bar appears at bottom of website
 zindex: '', //Can be set in CSS, although some may prefer to set here
-redirect: String(window.location.href), //Current location
+redirect: String(window.location.href), //Current location. Setting to false stops redirect
 domain: String(window.location.hostname), //Location of privacy policy
 referrer: String(document.referrer) //Where visitor has come from
+acceptFunction: false, //Callback function that triggers when user accepts
+declineFunction: false, //Callback function that triggers when user declines
 ```
+Minifying Files
+-------
+1. Install [node and npm](http://nodejs.org/) on your machine.
+2. Run "npm install" to install required grunt packages.
+3. Run "grunt minify" to minify js and css.
+4. Remember to add the short license back into the top of the minified files.

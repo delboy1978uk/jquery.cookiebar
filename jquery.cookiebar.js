@@ -41,9 +41,11 @@
 			fixed: false, //Set to true to add the class "fixed" to the cookie bar. Default CSS should fix the position
 			bottom: false, //Force CSS when fixed, so bar appears at bottom of website
 			zindex: '', //Can be set in CSS, although some may prefer to set here
-			redirect: String(window.location.href), //Current location
+			redirect: String(window.location.href), //Current location. Setting to false stops redirect
 			domain: String(window.location.hostname), //Location of privacy policy
-			referrer: String(document.referrer) //Where visitor has come from
+			referrer: String(document.referrer), //Where visitor has come from
+			acceptFunction: false, //Callback function that triggers when user accepts
+			declineFunction: false, //Callback function that triggers when user declines
 		};
 		var options = $.extend(defaults,options);
 		
@@ -137,8 +139,13 @@
 			//Sets the cookie preference to accepted if enable/accept button pressed
 			$('#cookie-bar .cb-enable').click(function(){
 				document.cookie = cookieEntry.replace('{value}','accepted');
+				if (options.acceptFunction && typeof(options.acceptFunction) === 'function') {
+					options.acceptFunction();
+				}
 				if(cookieValue!='enabled' && cookieValue!='accepted'){
-					window.location = options.redirect;
+					if (options.redirect !== false) {
+						window.location = options.redirect;
+					}
 				}else{
 					if(options.effect=='slide'){
 						$('#cookie-bar').slideUp(300,function(){$('#cookie-bar').remove();});
@@ -165,8 +172,13 @@
 					}
 				}
 				document.cookie = cookieEntry.replace('{value}','declined');
+				if (options.declineFunction && typeof(options.declineFunction) === 'function') {
+					options.declineFunction();
+				}
 				if(cookieValue=='enabled' && cookieValue!='accepted'){
-					window.location = options.redirect;
+					if (options.redirect !== false) {
+						window.location = options.redirect;
+					}
 				}else{
 					if(options.effect=='slide'){
 						$('#cookie-bar').slideUp(300,function(){$('#cookie-bar').remove();});

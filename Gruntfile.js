@@ -6,7 +6,7 @@ module.exports = function(grunt) {
       prod: {
         files: {
           // Dest: Src
-          'jquery.cookiebar.min.css': ['jquery.cookiebar.css']
+          'dist/jquery.cookiebar.min.css': ['jquery.cookiebar.css']
         }
       }
     },
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         },
         files: [{
           src: ['jquery.cookiebar.js'],
-          dest: 'jquery.cookiebar.min.js',
+          dest: 'dist/jquery.cookiebar.min.js',
         }]
       }
     },
