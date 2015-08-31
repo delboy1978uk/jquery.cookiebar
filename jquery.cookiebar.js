@@ -144,10 +144,8 @@
 				if (options.acceptFunction && typeof(options.acceptFunction) === 'function') {
 					options.acceptFunction();
 				}
-				if(cookieValue!='enabled' && cookieValue!='accepted'){
-					if (options.redirect !== false) {
-						window.location = options.redirect;
-					}
+				if(cookieValue!='enabled' && cookieValue!='accepted' && options.redirect !== false){
+					window.location = options.redirect;
 				}else{
 					if(options.effect=='slide'){
 						$('#cookie-bar').slideUp(300,function(){$('#cookie-bar').remove();});
@@ -177,10 +175,8 @@
 				if (options.declineFunction && typeof(options.declineFunction) === 'function') {
 					options.declineFunction();
 				}
-				if(cookieValue=='enabled' && cookieValue!='accepted'){
-					if (options.redirect !== false) {
-						window.location = options.redirect;
-					}
+				if(cookieValue=='enabled' && cookieValue!='accepted' && options.redirect !== false){
+					window.location = options.redirect;
 				}else{
 					if(options.effect=='slide'){
 						$('#cookie-bar').slideUp(300,function(){$('#cookie-bar').remove();});
