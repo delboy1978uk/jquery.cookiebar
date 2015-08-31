@@ -55,6 +55,11 @@ Minifying Files
 
 Change Log
 -------
+####v1.2.0####
+
+ * Added support for including classes in the cookie bar.
+ * Added custom function support for policy button.
+
 ####v1.1.0####
 
  * Added dist folder that contains minified files.
