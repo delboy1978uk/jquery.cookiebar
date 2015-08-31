@@ -47,6 +47,7 @@
 			acceptFunction: false, //Callback function that triggers when user accepts
 			declineFunction: false, //Callback function that triggers when user declines
 			customClass: '', // Optional cookie bar class. Target #cookiebar.<customClass> to avoid !important overwrites and separate multiple classes by spaces
+			policyFunction: false, //Callback function that triggers when user views the policy
 		};
 		var options = $.extend(defaults,options);
 		
@@ -189,6 +190,12 @@
 						$('#cookie-bar').hide(0,function(){$('#cookie-bar').remove();});
 					}
 					return false;
+				}
+			});
+			//Triggers when the user clicks the policy button
+			$('#cookie-bar .cb-policy').click(function(){
+				if (options.policyFunction && typeof(options.policyFunction) === 'function') {
+					options.policyFunction();
 				}
 			});
 		}
