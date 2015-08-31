@@ -46,7 +46,7 @@
 			referrer: String(document.referrer), //Where visitor has come from
 			acceptFunction: false, //Callback function that triggers when user accepts
 			declineFunction: false, //Callback function that triggers when user declines
-			customClass: '',
+			customClass: '', // Optional cookie bar class. Target #cookiebar.<customClass> to avoid !important overwrites and separate multiple classes by spaces
 		};
 		var options = $.extend(defaults,options);
 		
