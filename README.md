@@ -55,6 +55,10 @@ Minifying Files
 
 Change Log
 -------
+####v1.2.1####
+
+ * Fixed a bug that occurs when autoEnable and redirect are both false the bar does not hide.
+
 ####v1.2.0####
 
  * Added support for including classes in the cookie bar.
