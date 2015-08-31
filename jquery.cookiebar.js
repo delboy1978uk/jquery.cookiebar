@@ -46,6 +46,7 @@
 			referrer: String(document.referrer), //Where visitor has come from
 			acceptFunction: false, //Callback function that triggers when user accepts
 			declineFunction: false, //Callback function that triggers when user declines
+			customClass: '',
 		};
 		var options = $.extend(defaults,options);
 		
@@ -114,12 +115,12 @@
 			//Whether to add "fixed" class to cookie bar
 			if(options.fixed){
 				if(options.bottom){
-					var fixed = ' class="fixed bottom"';
+					var classes = ' class="fixed bottom ' + options.customClass + '"';
 				}else{
-					var fixed = ' class="fixed"';
+					var classes = ' class="fixed ' + options.customClass + '"';
 				}
 			}else{
-				var fixed = '';
+				var classes = ' class="' + options.customClass + '"';
 			}
 			if(options.zindex!=''){
 				var zindex = ' style="z-index:'+options.zindex+';"';
@@ -130,9 +131,9 @@
 			//Displays the cookie bar if arguments met
 			if(options.forceShow || cookieValue=='enabled' || cookieValue==''){
 				if(options.append){
-					$(options.element).append('<div id="cookie-bar"'+fixed+zindex+'><p>'+message+acceptButton+declineButton+policyButton+'</p></div>');
+					$(options.element).append('<div id="cookie-bar"'+classes+zindex+'><p>'+message+acceptButton+declineButton+policyButton+'</p></div>');
 				}else{
-					$(options.element).prepend('<div id="cookie-bar"'+fixed+zindex+'><p>'+message+acceptButton+declineButton+policyButton+'</p></div>');
+					$(options.element).prepend('<div id="cookie-bar"'+classes+zindex+'><p>'+message+acceptButton+declineButton+policyButton+'</p></div>');
 				}
 			}
 			
