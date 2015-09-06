@@ -23,10 +23,13 @@ Options
 message: 'We use cookies to track usage and preferences.', //Message displayed on bar
 acceptButton: true, //Set to true to show accept/enable button
 acceptText: 'I Understand', //Text on accept/enable button
+acceptFunction: false, //Callback function that triggers when user accepts
 declineButton: false, //Set to true to show decline/disable button
 declineText: 'Disable Cookies', //Text on decline/disable button
+declineFunction: false, //Callback function that triggers when user declines
 policyButton: false, //Set to true to show Privacy Policy button
 policyText: 'Privacy Policy', //Text on Privacy Policy button
+policyFunction: false, //Callback function that triggers before redirect when user clicks policy button
 policyURL: '/privacy-policy/', //URL of Privacy Policy
 autoEnable: true, //Set to true for cookies to be accepted automatically. Banner still shows
 acceptOnContinue: false, //Set to true to silently accept cookies when visitor moves to another page
@@ -37,12 +40,11 @@ element: 'body', //Element to append/prepend cookieBar to. Remember "." for clas
 append: false, //Set to true for cookieBar HTML to be placed at base of website. YMMV
 fixed: false, //Set to true to add the class "fixed" to the cookie bar. Default CSS should fix the position
 bottom: false, //Force CSS when fixed, so bar appears at bottom of website
+customClass: '', // Optional cookie bar class. Target #cookiebar.<customClass> to avoid !important overwrites and separate multiple classes by spaces
 zindex: '', //Can be set in CSS, although some may prefer to set here
 redirect: String(window.location.href), //Current location. Setting to false stops redirect
 domain: String(window.location.hostname), //Location of privacy policy
 referrer: String(document.referrer) //Where visitor has come from
-acceptFunction: false, //Callback function that triggers when user accepts
-declineFunction: false, //Callback function that triggers when user declines
 ```
 Minifying Files
 -------
@@ -53,6 +55,15 @@ Minifying Files
 
 Change Log
 -------
+####v1.2.1####
+
+ * Fixed a bug that occurs when autoEnable and redirect are both false the bar does not hide.
+
+####v1.2.0####
+
+ * Added support for including classes in the cookie bar.
+ * Added custom function support for policy button.
+
 ####v1.1.0####
 
  * Added dist folder that contains minified files.
