@@ -55,21 +55,21 @@ Minifying Files
 
 Change Log
 -------
-####v1.2.1####
+#### v1.2.1
 
  * Fixed a bug that occurs when autoEnable and redirect are both false the bar does not hide.
 
-####v1.2.0####
+#### v1.2.0
 
  * Added support for including classes in the cookie bar.
  * Added custom function support for policy button.
 
-####v1.1.0####
+#### v1.1.0
 
  * Added dist folder that contains minified files.
  * Added custom function support for accept and decline buttons.
  * Added support for stopping redirect after accepting.
 
-####v1.0.0####
+#### v1.0.0
 
  * Initial jquery.cookiebar release
