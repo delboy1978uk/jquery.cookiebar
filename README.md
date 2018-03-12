@@ -3,8 +3,6 @@ Stick it to the EU Government with this compliant cookie bar
 
 It's a paradox. "If you dont want tracking cookies, click here to let us know you dont want tracked, and we'll place a tracking cookie on your computer that tracks you noting the fact that you dont want tracked.". What a lot of nonsense. 
 
-This jquery plugin is a githubbed fork of http://www.primebox.co.uk/projects/cookie-bar/ 
-
 Usage
 -----
 ```javascript
